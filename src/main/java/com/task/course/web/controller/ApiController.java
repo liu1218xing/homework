@@ -36,7 +36,7 @@ public class ApiController {
 		if(result==true){
 			int code =resp.getStatus();
 			map.addAttribute("code", code);
-			map.addAttribute("message", "帐号和密码验证成功");
+			map.addAttribute("message", "登录成功");
 			map.addAttribute("result",result);
 			Person person= loginService.getPerson(userName);
 			User user = new User();
@@ -54,7 +54,7 @@ public class ApiController {
 		}else{
 			int code =resp.getStatus();
 			map.addAttribute("code", code);
-			map.addAttribute("message", "帐号或密码验错误");
+			map.addAttribute("message", "登录失败");
 			map.addAttribute("result",result);
 		}
 		System.out.println(map);
@@ -79,9 +79,12 @@ public class ApiController {
 	}
 	@RequestMapping("/buy")
 	public String ProductBuy(@RequestParam("id") Integer id, 
-			@RequestParam("password") String password, ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)
+			 ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)
 			throws IOException {
+		
 		User user= new User();
+		user = (User) session.getAttribute("user");
+		System.out.println("buy id:"+id+",userid:"+user.getId());
 		buyListService.buyTtx(id, user.getId());
 		if (resp.getStatus()==200){
 			map.addAttribute("code",resp.getStatus());

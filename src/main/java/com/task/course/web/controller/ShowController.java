@@ -25,7 +25,13 @@ public class ShowController {
 	public String show(Model map,HttpSession session,int id){
 		User user =new User();
 		user = (User) session.getAttribute("user");
-		map.addAttribute("product",productService.getProductList(id, user.getId()));
+		if (user != null){
+			map.addAttribute("product",productService.getProductList(id, user.getId()));
+		}else
+		{
+			map.addAttribute("product",productService.getProduct(id));
+		}
+		
 		return "show";
 	}
 	@RequestMapping("/account")

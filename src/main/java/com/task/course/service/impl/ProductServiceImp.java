@@ -20,7 +20,7 @@ public class ProductServiceImp implements ProductService {
 	private TrxMapper trxMapper;
 	
 	@Override
-	public List<ProductList> getAllProductList(int userId) {
+	public List<ProductList> getProductList(int userId) {
 		// TODO Auto-generated method stub
 		List<Content> contentList = contentMapper.getAllConten();
 		ArrayList<ProductList> productList = new ArrayList<ProductList>();
@@ -77,6 +77,55 @@ public class ProductServiceImp implements ProductService {
 			product.setBuy(false);
 			product.setBuyPrice(0);
 		}
+		return product;
+	}
+
+	@Override
+	public List<ProductList> getAllProductList() {
+		// TODO Auto-generated method stub
+		List<Content> contentList = contentMapper.getAllConten();
+		ArrayList<ProductList> productList = new ArrayList<ProductList>();
+		for(Content content : contentList){
+			ProductList product = new ProductList();
+			product.setId(content.getId());
+			product.setTitle(content.getTitle());
+			product.setImage(content.getImage());
+			product.setPrice(content.getPrice());
+			List<Trx> contentlist= trxMapper.getpersonTrx(content.getId());
+			if (contentlist != null){
+				product.setSell(true);
+			}else{
+				product.setSell(false);
+			}
+			product.setBuy(false);
+		
+			productList.add(product);
+		}
+		return productList;
+	}
+
+	@Override
+	public ProductList getProduct(int contentId) {
+		// TODO Auto-generated method stub
+		Content content = new Content();
+		content = contentMapper.getSingleConten(contentId);
+		ProductList product = new ProductList();
+		product.setId(content.getId());
+		product.setTitle(content.getTitle());
+		product.setImage(content.getImage());
+		product.setPrice(content.getPrice());
+		product.setSummary(content.getSummary());
+		product.setDetail(content.getDetail());
+		Trx trx = new Trx();
+		List<Trx> contentlist= trxMapper.getpersonTrx(content.getId());
+		if (contentlist != null){
+			product.setSell(true);
+		}else{
+			product.setSell(false);
+		}
+		product.setBuy(false);
+		product.setBuyPrice(content.getPrice());
+		
 		return product;
 	}
 

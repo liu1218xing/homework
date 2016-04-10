@@ -45,12 +45,15 @@ public class LoginController {
 			User user =new User();
 			user = (User) session.getAttribute("user");
 			System.out.println("index user:"+user.getId()+",userName:"+user.getUsername());
-			map.addAttribute("productList",productService.getAllProductList(user.getId()));
-			List<ProductList> productList = productService.getAllProductList(user.getId());
+			map.addAttribute("productList",productService.getProductList(user.getId()));
+			List<ProductList> productList = productService.getProductList(user.getId());
 			for(ProductList product :productList){
 				System.out.println(product.getId()+",title:"+product.getTitle()+",image:"+product.getImage()+",price:"+product.getPrice()+",isBuy:"+product.getisBuy()+",isSell:"+product.getisSell());
 			}
+		}else{
+			map.addAttribute("productList",productService.getAllProductList());
 		}
+			
 		System.out.println("hello index!");
 		return "index";
 	}
