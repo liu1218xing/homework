@@ -1,9 +1,17 @@
 package com.task.course.dao;
 
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.sql.rowset.serial.SerialBlob;
 
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.springframework.context.ApplicationContext;
@@ -27,10 +35,39 @@ public class Test {
 //		dao.createTable();
 //		dao.insertData();
 //		System.out.println(dao.getItemById(691300));
+		
+		
+		
+		Content content = new Content();
 		System.out.println("hello");
-		Content content =new Content();
 		content =  dao.getSingleConten(2);
-		System.out.println(content.getId()+content.getTitle()+content.getDetail());
+		System.out.println(content.getDetail());
+		 Object detail = content.getDetail();
+//		Blob blob = (Blob)content.getDetail();
+		 OutputStream ops = null; 
+		
+//		Blob blob =new SerialBlob((byte[]) content.getDetail()); 
+//		////////////////
+//		byte[] returnValue = null;
+//	    if (null != blob) {
+//	      returnValue = blob.getBytes(1, (int) blob.length());
+//	    }
+//	    System.out.println("ret:"+returnValue);
+	    
+//	    return returnValue;
+		/////////////////
+//		long blobLength = detail.length();
+//		String s = detail.toString();
+//		
+//		System.out.println(s);
+		
+//		try{  
+//	         String content_s1 = new String(blob.getBytes((long)1, (int)blob.length()));  
+//	         System.out.println(content_s1);
+//	    } catch(SQLException e) {  
+//	         e.printStackTrace();  
+//	    }   
+//		System.out.println(content.getId()+content.getTitle()+"d:"+detail);
 //		Trx trx = new Trx();
 //		trx = dao.getpersonTrx(1);
 //		trx = dao.getCurrPersonIsBuyTrx(1,1);

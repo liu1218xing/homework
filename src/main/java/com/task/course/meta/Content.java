@@ -1,5 +1,7 @@
 package com.task.course.meta;
 
+
+
 public class Content {
 	private int id;
 	private int price;

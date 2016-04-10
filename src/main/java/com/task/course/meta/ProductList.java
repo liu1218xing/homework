@@ -1,5 +1,7 @@
 package com.task.course.meta;
 
+import java.sql.Blob;
+
 public class ProductList {
 	private int id;
 	private String title;

@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alibaba.druid.pool.vendor.SybaseExceptionSorter;
+import com.task.course.meta.Content;
 import com.task.course.meta.Person;
 import com.task.course.meta.ProductList;
 import com.task.course.meta.User;
+import com.task.course.service.ContentService;
 import com.task.course.service.LoginService;
 import com.task.course.service.ProductService;
 import com.task.course.util.JsonUtils;
@@ -32,7 +34,10 @@ public class LoginController {
 
 	@Autowired 
 	private LoginService loginService;
-	@Autowired ProductService productService;
+	@Autowired
+	private ContentService contentService;
+	@Autowired 
+	ProductService productService;
 	@RequestMapping("/")
 	public String showIndex(Model map,HttpSession session){
 		if(session.getAttribute("user")!=null){
@@ -65,6 +70,10 @@ public class LoginController {
 	public void spring(@PathVariable("userId") String userId, @RequestParam("msg") String msg,
 			@RequestHeader("host") String host, Writer writer) throws IOException {
 		writer.write("userId=" + userId + ", msg=" + msg + ", hostHeader=" + host);
+		Content content = new Content();
+		content = contentService.getSingleConten(1);
+		System.out.println(content.getId()+",title:"+content.getTitle());
+		writer.write("   contentId=" + content.getId() + ", title=" + content.getTitle() );
 		
 	}
 	

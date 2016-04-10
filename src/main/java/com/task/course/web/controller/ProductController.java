@@ -1,5 +1,6 @@
 package com.task.course.web.controller;
 
+import java.sql.Blob;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpSession;
