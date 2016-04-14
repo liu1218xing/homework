@@ -52,8 +52,8 @@ public class ApiController {
 			System.out.println("obj:"+obj);
 			System.out.println("user:"+user.toString());
 		}else{
-			int code =resp.getStatus();
-			map.addAttribute("code", code);
+			
+			map.addAttribute("code", 204);
 			map.addAttribute("message", "登录失败");
 			map.addAttribute("result",result);
 		}
@@ -71,7 +71,7 @@ public class ApiController {
 			map.addAttribute("message","delete ok");
 			map.addAttribute("result",true);
 		}else{
-			map.addAttribute("code",resp.getStatus());
+			map.addAttribute("code",204);
 			map.addAttribute("message","delete faild");
 			map.addAttribute("result",false);
 		}
@@ -91,7 +91,7 @@ public class ApiController {
 			map.addAttribute("message","buy ok");
 			map.addAttribute("result",true);
 		}else{
-			map.addAttribute("code",resp.getStatus());
+			map.addAttribute("code",204);
 			map.addAttribute("message","buy faild");
 			map.addAttribute("result",false);
 		}

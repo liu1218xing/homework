@@ -22,7 +22,7 @@ public class ShowController {
 	BuyListService buyListService;
 	
 	@RequestMapping("/show")
-	public String show(Model map,HttpSession session,int id){
+	public String show(Model map,HttpSession session,int id) throws Exception{
 		User user =new User();
 		user = (User) session.getAttribute("user");
 		if (user != null){

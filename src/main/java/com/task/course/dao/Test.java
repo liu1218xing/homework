@@ -39,18 +39,32 @@ public class Test {
 		
 		
 		Content content = new Content();
-		System.out.println("hello");
-		content =  dao.getSingleConten(2);
-		System.out.println(content.getDetail());
+
+		 
+//		String details = new String("你好，中文");
+//		
+//		content.setDetail(details.getBytes("UTF-8"));
+//		content.setImage("hwefewf");
+//		content.setPrice(12);
+//		content.setSummary("sfdsfdsf");
+//		content.setTitle("ttitle");
+//		dao.addConten(content);
+//		System.out.println(details.getBytes("UTF-8"));
+//		System.out.println("hello");
+		content =  dao.getSingleConten(4);
+		String details = new String(content.getDetail(),"UTF-8");
+		System.out.println("detail:"+details);
 		 Object detail = content.getDetail();
+		 
+		 
 //		Blob blob = (Blob)content.getDetail();
-		 OutputStream ops = null; 
+//		 OutputStream ops = null; 
 		
 //		Blob blob =new SerialBlob((byte[]) content.getDetail()); 
 //		////////////////
 //		byte[] returnValue = null;
 //	    if (null != blob) {
-//	      returnValue = blob.getBytes(1, (int) blob.length());
+//	      returnValue = detail.getBytes(1, (int) detail.length());
 //	    }
 //	    System.out.println("ret:"+returnValue);
 	    

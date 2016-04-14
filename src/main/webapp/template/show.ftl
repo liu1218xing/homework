@@ -14,7 +14,7 @@
         <div class="img"><img src="${product.image}" alt=""></div>
         <div class="cnt">
             <h2>${product.title} </h2>
-            <p class="summary">${product.summary}sssss</p>
+            <p class="summary">${product.summary}</p>
             <div class="price">
                 <span class="v-unit">¥</span><span class="v-value">${product.price}</span>
             </div>

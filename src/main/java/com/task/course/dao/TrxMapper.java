@@ -25,6 +25,12 @@ public interface TrxMapper {
 	@Select("SELECT * FROM Trx WHERE contentId=#{contentId}")
 	public List<Trx> getpersonTrx(int contentId);
 	
+	@Select("SELECT count(1) FROM Trx WHERE contentId=#{contentId}")
+	public int getCountCountent(int contentId);
+	
+	@Select("SELECT count(1) FROM Trx WHERE  contentId=#{contentId} AND personId=#{personId}")
+	public int getCountBuyCountent(@Param("contentId") int contentId, @Param("personId") int personId);
+	
 	@Select("SELECT * FROM Trx WHERE contentId=#{contentId} AND personId=#{personId}")
 	public Trx getCurrPersonIsBuyTrx(@Param("contentId") int contentId, @Param("personId") int personId);
 	

@@ -49,7 +49,25 @@ public class BuyListServiceImpl implements BuyListService {
 		trx.setPrice(content.getPrice());
 		trx.setTime(time);
 		trxMapper.addTtx(trx);
+
 	}
+	@Override
+	public int getSellCountentCount(int id) {
+		// TODO Auto-generated method stub
+
+		return trxMapper.getCountCountent(id);
+	}
+	@Override
+	public int getBuyCountentCount(int contentId, int userId) {
+		// TODO Auto-generated method stub
+		return trxMapper.getCountBuyCountent(contentId,userId);
+	}
+	@Override
+	public Trx getCurrPersonIsBuyContent(int contentId, int userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 
 }

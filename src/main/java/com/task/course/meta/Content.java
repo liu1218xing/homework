@@ -8,7 +8,7 @@ public class Content {
 	private String title;
 	private String image;
 	private String summary;
-	private String detail;
+	private byte[] detail;
 	public int getId() {
 		return id;
 	}
@@ -39,10 +39,10 @@ public class Content {
 	public void setSummary(String summary) {
 		this.summary = summary;
 	}
-	public String getDetail() {
+	public byte[] getDetail() {
 		return detail;
 	}
-	public void setDetail(String detail) {
+	public void setDetail(byte[] detail) {
 		this.detail = detail;
 	}
 	

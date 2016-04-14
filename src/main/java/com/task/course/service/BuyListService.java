@@ -8,6 +8,10 @@ import com.task.course.meta.Trx;
 
 
 public interface BuyListService {
-	public List<BuyList> getbuyList(int userId);
-	public void buyTtx(int contentId ,int userId);
+	public List<BuyList> getbuyList(int personId);
+	public void buyTtx(int contentId ,int personId);
+	public int getSellCountentCount(int contentId);
+	public int getBuyCountentCount(int contentId,int personId);
+	public Trx getCurrPersonIsBuyContent(int contentId ,int personId);
+
 }
