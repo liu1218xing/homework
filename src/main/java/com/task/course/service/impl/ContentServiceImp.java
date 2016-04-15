@@ -42,9 +42,10 @@ public class ContentServiceImp implements ContentService {
 	}
 
 	@Override
-	public void deleteContent(int id) {
+	public void deleteContent(int contentId) {
 		// TODO Auto-generated method stub
-		contentMapper.deleteContent(id);
+		System.out.println("del id:"+contentId);
+		contentMapper.deleteContent(contentId);
 		
 	}
 

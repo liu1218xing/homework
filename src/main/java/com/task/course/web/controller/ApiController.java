@@ -68,12 +68,14 @@ public class ApiController {
 		return "json";
 	}
 	//删除商品接口
+	
 	@RequestMapping("/delete")
 	public String ProductDelete(@RequestParam("id") Integer id, 
-			@RequestParam("password") String password, ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)
+			 ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)
 			throws IOException {
 		
 		contentService.deleteContent(id);
+		System.out.println("api delete content id:"+id);
 		if (resp.getStatus()==200){
 			map.addAttribute("code",resp.getStatus());
 			map.addAttribute("message","delete ok");

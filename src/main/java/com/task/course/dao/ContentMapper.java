@@ -28,6 +28,6 @@ public interface ContentMapper {
 	@Update("UPDATE Content SET price=#{price},title=#{title},image =#{image},summary=#{summary},detail = #{detail} WHERE id=#{id}")
 	public void updateContent(Content content);
 	
-	@Delete("DELETE Content WHERE id=#{id}")
+	@Delete("delete from Content WHERE id=#{id}")
 	public void deleteContent(int id);
 }
