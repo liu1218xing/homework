@@ -121,7 +121,7 @@ public class ProductServiceImp implements ProductService {
 		product.setImage(content.getImage());
 		product.setPrice(content.getPrice());
 		product.setSummary(content.getSummary());
-		product.setDetail(new String(content.getDetail(),"UTF-8")+",title:"+content.getTitle()+",summay:"+content.getSummary());
+		product.setDetail(new String(content.getDetail(),"UTF-8"));
 		Trx trx = new Trx();
 		int count= buyListService.getSellCountentCount(content.getId());
 		if (count > 0 ){
