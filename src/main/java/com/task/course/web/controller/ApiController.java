@@ -18,6 +18,12 @@ import com.task.course.service.BuyListService;
 import com.task.course.service.ContentService;
 import com.task.course.service.LoginService;
 
+/**
+ * 
+ * @author liuxing
+ *@Description:api接口类，实现登陆、删除商品、购买商品
+ *@datetime 2016年4月15日上午8:42:28
+ */
 @Controller
 @RequestMapping("/api")
 public class ApiController {
@@ -27,6 +33,7 @@ public class ApiController {
 	private ContentService contentService;
 	@Autowired
 	private BuyListService buyListService;
+	//登陆接口
 	@RequestMapping("/login")
 	public String login(@RequestParam("userName") String userName, 
 			@RequestParam("password") String password, ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)
@@ -60,6 +67,7 @@ public class ApiController {
 		System.out.println(map);
 		return "json";
 	}
+	//删除商品接口
 	@RequestMapping("/delete")
 	public String ProductDelete(@RequestParam("id") Integer id, 
 			@RequestParam("password") String password, ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)
@@ -77,6 +85,7 @@ public class ApiController {
 		}
 		return "json";
 	}
+	//购买接口
 	@RequestMapping("/buy")
 	public String ProductBuy(@RequestParam("id") Integer id, 
 			 ModelMap map,HttpSession session,HttpServletResponse resp,HttpServletRequest request)

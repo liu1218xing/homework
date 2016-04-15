@@ -16,7 +16,12 @@ import com.task.course.meta.Content;
 import com.task.course.meta.Product;
 import com.task.course.service.ContentService;
 import com.task.course.service.ProductService;
-
+/**
+ * 
+ * @author liuxing
+ *@Description:实现产品发布、编辑
+ *@datetime 2016年4月15日上午8:44:35
+ */
 @Controller
 public class ProductController {
 	@Autowired

@@ -28,7 +28,12 @@ import com.task.course.service.ContentService;
 import com.task.course.service.LoginService;
 import com.task.course.service.ProductService;
 import com.task.course.util.JsonUtils;
-
+/**
+ * 
+ * @author liuxing
+ *@Description:实现首页展示，退出，测试
+ *@datetime 2016年4月15日上午8:44:03
+ */
 @Controller
 public class LoginController {
 

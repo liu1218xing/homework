@@ -12,7 +12,12 @@ import com.task.course.meta.User;
 import com.task.course.service.BuyListService;
 import com.task.course.service.LoginService;
 import com.task.course.service.ProductService;
-
+/**
+ * 
+ * @author liuxing
+ *@Description:实现产品的展示，帐号信息
+ *@datetime 2016年4月15日上午8:45:08
+ */
 @Controller
 public class ShowController {
 

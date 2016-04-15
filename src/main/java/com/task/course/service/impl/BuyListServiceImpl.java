@@ -63,10 +63,11 @@ public class BuyListServiceImpl implements BuyListService {
 		return trxMapper.getCountBuyCountent(contentId,userId);
 	}
 	@Override
-	public Trx getCurrPersonIsBuyContent(int contentId, int userId) {
+	public Trx getCurrPersonIsBuyContent(int contentId, int personId) {
 		// TODO Auto-generated method stub
-		return null;
+		return trxMapper.getCurrPersonIsBuyTrx(contentId, personId);
 	}
+	
 	
 	
 

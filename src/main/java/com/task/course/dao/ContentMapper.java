@@ -15,7 +15,7 @@ import com.task.course.meta.Content;
 
 
 public interface ContentMapper {
-	@Insert("INSERT INTO content (price,title,image,summary,detail) Value(#{price},#{title},#{image},#{summary},#{detail})")
+	@Insert("INSERT INTO Content (price,title,image,summary,detail) Value(#{price},#{title},#{image},#{summary},#{detail})")
 	@Options(useGeneratedKeys = true,keyProperty="id")
 	public void addConten(Content content);
 	
