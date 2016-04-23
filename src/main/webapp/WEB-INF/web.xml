@@ -57,4 +57,28 @@
         <url-pattern>/*</url-pattern>  
     </filter-mapping>
 	
+	<filter>  
+        <filter-name>Buyer Access</filter-name>  
+        <filter-class>  
+            com.task.course.web.filter.BuyerAccessFilter
+        </filter-class>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>Buyer Access</filter-name>  
+        <url-pattern>/account</url-pattern>  
+        <url-pattern>/buy</url-pattern>  
+    </filter-mapping>  
+    <filter>  
+        <filter-name>Seller Access</filter-name>  
+        <filter-class>  
+            com.task.course.web.filter.SellerAccessFilter
+        </filter-class>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>Seller Access</filter-name>  
+        <url-pattern>/public</url-pattern>  
+        <url-pattern>/delete</url-pattern>  
+        <url-pattern>/edit</url-pattern>  
+    </filter-mapping> 
+    
 </web-app>
